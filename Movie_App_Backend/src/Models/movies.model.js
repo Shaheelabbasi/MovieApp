@@ -8,8 +8,7 @@ const movieSchema=mongoose.Schema({
 
    },
     title:{
-        type:String, 
-        unique:true
+        type:String,
     },
     year:{
      type:String,
@@ -17,6 +16,7 @@ const movieSchema=mongoose.Schema({
     poster:{
         type:String,
     }
+    
 
 
 })

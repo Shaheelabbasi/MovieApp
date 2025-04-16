@@ -23,6 +23,11 @@ const Movies = ({ IsDark, setIsDark }) => {
             alert(response.statusText)
             return
         }
+        if (response.status==500)
+        {
+            alert("internal server error")
+            setloading(false)
+        }
         const apidata = await response.json()
         console.log("Api response is ", apidata)
         if (apidata.status == 200) {
@@ -38,8 +43,8 @@ const Movies = ({ IsDark, setIsDark }) => {
         }
 
         console.log("the status  is ", response.status)
-
-
+        
+        
 
 
     }

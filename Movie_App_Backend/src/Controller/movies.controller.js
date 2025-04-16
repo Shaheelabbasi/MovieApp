@@ -79,18 +79,16 @@ const SearchMovies = asyncHandler(async (req, res) => {
       }
     }
 
-
-
     for (let movie of uniqueMovies) {
         const exists = await Movies.findOne({ imdbID: movie.imdbID });
-        if (!exists) {
+        if (!exists) 
           await Movies.create({
             imdbID: movie.imdbID,
             title: movie.Title,
             year: movie.Year,
             poster: movie.Poster,
           });
-        }
+        
       }
 
 
